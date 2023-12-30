@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array iteration</title>
+</head>
+<body>
+    <script>
+        //array iteration operates over the number of array element
+        //array ko sabai elemnt ko square chaiyo vane array iteration use garne
+        //filter garna milcha reduce garera single value produce garna milcha
+        //foreach() ra forin() same ho
+        //flatMap()
+        //filter()
+        //reduce()
+        //reduceRight()
+        //find()
+        //includes()
+        //every()
+        //some()
+        //spread()
+        const numbers=[2,3,4,5,6]
+        //forEach() returns the singlez elements separately not in the array format
+        //function define
+        // const squareFunc=(num)=>{
+        //     num**=2
+        //     document.write(`${num} <br>`)
+        // }
+        //squareFunc->function ko nam
+        //parenthesis pardaina function ko bhita function call garda
+        //alternative method arrow ayesi function define garya vanera bujne
+        numbers.forEach((num)=>{
+            num**=2
+            document.write(`${num} <br>`)
+
+        })
+        //map()->returns the array elemnt in the new variable and doesnot make any effect to original array
+
+        const result=numbers.map(num=>
+         num*3
+        )
+        document.write(`${result}<br>`)
+
+        //filter()->returns the elemnt in the array which passes a test and doesnot make any effect to orginal array
+        // const ages = [32, 33, 16, 40];
+        // const res = ages.filter(check);
+
+        // function check(age) {
+        //   return age >= 18
+        // }
+        // document.write(`${res}<br>`)
+
+        const filterData=numbers.filter(num=> num>2 && num<6)
+        document.write(`${filterData}<br>`)
+
+        //reduce()-> reduce all the array elemnts in the single elements
+
+        const total=numbers.reduce((accumulator,currentValue)=>{
+            return accumulator+currentValue
+            // working steps
+            //ac=2
+            //cv=3
+            //ac=5
+            //cv=4
+            //ac=9
+            //cv=5
+            //ac=14
+            //cv=6
+            //ac=20
+        })
+        document.write(`${total} <br>`)
+        //find()-> returns the first next  value which passes a condition
+
+        const test=numbers.find(num=> num>4)
+        document.write(`${test}<br>`)
+
+        //includes()-> check if the element is present or not
+
+        const check=numbers.includes(5)
+       document.write(`${check}<br>`)
+
+       //every()->check whether every number of array passes a condition or not
+
+       const check1=numbers.every(num=>num>5)
+       document.write(`${check1}<br>`)
+
+
+       const check2=numbers.some(num=>num>2)
+       document.write(`${check2}<br>`)
+
+       //spread():...(combine multiple array to new array)
+       const text=['a','b','c','d']
+       const data=[...numbers,...text]
+       document.write(`${data}`)
+       console.log(data)
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
